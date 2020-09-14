@@ -138,7 +138,8 @@ Dev images requires full checkout of the [data-collector-project](https://github
 | collect-tvinn-test              | Tolletaten    | Collect tvinn test                               |
 | collect-tvinn-test-api          | Tolletaten    | Collect tvinn test api (test backend #2)         |
 | collect-moveit-test             | SSB           | Collect files from MoveIt Automation Server (*)  |
-|
+| collect-enheter-test            | brreg         | collect enheter from brreg open api              |
+
  
  > (*) MoveIt notice: copy and configure `./profile/postgres/conf/application-sample_moveit.properties` to `./profile/postgres/conf/application-override.properties`.  
  
