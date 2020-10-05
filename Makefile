@@ -79,6 +79,29 @@ remove-gcs: ## Remove gcs
 open-gcs-adminer: ## Open a web based DB admin tool in your browser
 	@open http://localhost:8980/?pgsql=172.17.0.1:15432&username=rdc&db=rdc
 
+#
+# docker-compose filesystem
+#
+
+.PHONY: pull-filesystem
+pull-filesystem: ## Pull images
+	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml pull
+
+.PHONY: start-filesystem
+start-filesystem: ## Start filesystem
+	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml up -d
+
+.PHONY: tail-filesystem
+tail-filesystem: ## Tail filesystem
+	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml logs -f
+
+.PHONY: stop-filesystem
+stop-filesystem: ## Stop filesystem
+	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml down -v
+
+.PHONY: remove-filesystem
+remove-filesystem: ## remove filesystem
+	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml rm
 
 #
 # docker-compose kafka

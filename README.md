@@ -44,6 +44,19 @@ make TARGET
 
 > :warning: only one _target provider_ can be run at a given time!
 
+## Filesystem Stream Provider
+
+> :bulb: Filesystem is a recommended provider for test purposes.
+
+| Target                          | Description                                      |
+| :------------------------------ | :----------------------------------------------- |
+| pull-filesystem                   | Pull images                                      |
+| start-filesystem                  | Start filesystem                                   |
+| stop-filesystem                   | Stop postgres                                    |
+| remove-filesystem                 | Remove postgres                                  |
+| collect-enheter-test              | enhterregister collection test                   |
+
+
 ## Postgres Stream Provider
 
 > :bulb: Postgres is a recommended provider for test purposes.
