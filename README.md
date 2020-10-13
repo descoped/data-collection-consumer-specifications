@@ -54,7 +54,7 @@ make TARGET
 | start-filesystem                  | Start filesystem                                   |
 | stop-filesystem                   | Stop postgres                                    |
 | remove-filesystem                 | Remove postgres                                  |
-| collect-enheter-test              | enhterregister collection test                   |
+| collect-enheter-test              | enhetsregister collection test                   |
 
 
 ## Postgres Stream Provider
