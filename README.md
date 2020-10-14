@@ -50,11 +50,11 @@ make TARGET
 
 | Target                          | Description                                      |
 | :------------------------------ | :----------------------------------------------- |
-| pull-filesystem                   | Pull images                                      |
-| start-filesystem                  | Start filesystem                                   |
-| stop-filesystem                   | Stop postgres                                    |
-| remove-filesystem                 | Remove postgres                                  |
-| collect-enheter-test              | enhetsregister collection test                   |
+| pull-filesystem                 | Pull images                                      |
+| start-filesystem                | Start filesystem                                 |
+| stop-filesystem                 | Stop postgres                                    |
+| remove-filesystem               | Remove postgres                                  |
+| collect-enheter-test            | enhetsregister collection test                   |
 
 
 ## Postgres Stream Provider
