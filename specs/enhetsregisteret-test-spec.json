@@ -11,7 +11,8 @@
       "pageSize" : "20"
     },
     "globalState" : {
-      "global.topic" : "enhetsregister"
+      "global.topic" : "enhetsregister",
+      "MAX_NUMBER_OF_ITERATIONS" : "499"
     },
     "headers" : {
       "accept" : [ "application/json" ]

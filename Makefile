@@ -91,6 +91,10 @@ pull-filesystem: ## Pull images
 start-filesystem: ## Start filesystem
 	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml up -d
 
+.PHONY: start-filesystem-with-console
+start-filesystem-with-console: ## Start filesystem
+	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml up
+
 .PHONY: tail-filesystem
 tail-filesystem: ## Tail filesystem
 	@WORKDIR=$(PWD) PROFILE=filesystem DC_IMAGE=${DC_RELEASE_IMAGE} docker-compose -f docker-compose-filesystem.yml logs -f
