@@ -1,14 +1,13 @@
 {
   "type" : "Specification",
-  "name" : "Collect FREG",
-  "startFunctionId" : "loop",
+  "name" : "Collect FREG Bulk Uttrekk",
+  "startFunctionId" : "create-job",
   "id" : "SKE-FREG-UTTREKK-BATCH",
   "configure" : [ {
     "type" : "SpecificationContext",
     "variables" : {
       "ProduksjonURL" : "https://folkeregisteret.api.skatteetaten.no/folkeregisteret/offentlig-med-hjemmel",
       "fromFeedSequence" : "0",
-      "jobId" : "c5d3af2f-4ac7-4506-af67-61e71c5f0b8f",
       "nextBatch" : "0"
     },
     "globalState" : {
@@ -66,6 +65,12 @@
       "url" : "${ProduksjonURL}/api/v1/uttrekk/${jobId}/batch/${fromBatch}",
       "requestHeaders" : { },
       "returnVariables" : [ "nextBatch" ],
+      "retryWhile" : [ {
+        "type" : "HttpStatusRetryWhile",
+        "statusCode" : 404,
+        "duration" : "SECONDS",
+        "amount" : 15
+      } ],
       "responseValidators" : [ {
         "type" : "HttpStatusValidation",
         "success" : {
